@@ -17,10 +17,11 @@ public class ListFestivals extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.festival_list);
 
-        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.festival_list, festivals);
+        ArrayAdapter adapter = new ArrayAdapter<>(this, R.layout.festival_list, festivals);
 
         //ListView listView = (ListView) findViewById(R.id.festival_view);
         //listView.setAdapter(adapter);
+
     }
 
 }
