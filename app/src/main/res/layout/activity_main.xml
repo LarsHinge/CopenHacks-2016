@@ -43,6 +43,7 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
+        android:text="Kr.:"
         android:id="@+id/editText"
         android:layout_marginLeft="30dp"
         android:layout_marginStart="30dp"
@@ -104,6 +105,14 @@
         android:layout_alignRight="@+id/editText"
         android:layout_alignEnd="@+id/editText" />
 
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Metal"
+        android:id="@+id/switch7"
+        android:layout_below="@+id/switch6"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -119,6 +128,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
+        android:text="Km:"
         android:id="@+id/editText2"
         android:layout_alignTop="@+id/textView3"
         android:layout_alignRight="@+id/switch6"
