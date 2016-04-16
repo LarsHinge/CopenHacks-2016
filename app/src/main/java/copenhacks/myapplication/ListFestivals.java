@@ -26,6 +26,7 @@ public class ListFestivals extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.festival_listview);
         listView.setAdapter(adapter);
 
+
     }
 
 }
