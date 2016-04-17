@@ -23,9 +23,7 @@ import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by William Marstrand on 4/16/2016.
- */
+
 public class ListFestivals extends AppCompatActivity {
 
     private static final String BASE_URL = "http://api.myservice.com/"; //TODO Change to RESTAPI BaseURL

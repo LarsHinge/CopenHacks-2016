@@ -73,7 +73,7 @@
         android:layout_alignRight="@+id/editText"
         android:layout_alignEnd="@+id/editText"
         android:checked="false"
-        android:textStyle="bold" />
+        android:textSize="20dp" />
 
     <Switch
         android:layout_width="wrap_content"
@@ -83,7 +83,7 @@
         android:layout_below="@+id/switch1"
         android:layout_alignRight="@+id/editText"
         android:layout_alignEnd="@+id/editText"
-        android:textStyle="bold" />
+        android:textSize="20dp" />
 
     <Switch
         android:layout_width="wrap_content"
