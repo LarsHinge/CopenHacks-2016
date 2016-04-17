@@ -26,20 +26,25 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ListFestivals extends AppCompatActivity {
 
-    private static final String BASE_URL = "http://api.myservice.com/"; //TODO Change to RESTAPI BaseURL
+    /*private static final String BASE_URL = "http://api.myservice.com/"; //TODO Change to RESTAPI BaseURL
     private Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
-            .build();
+            .build();*/
     private FestivalService festivalService;
-    private List<Festival> festivals;
+    private List<Festival> festivals= new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.festival_list);
 
-        ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, festivals);
+        populateFestivalList();
+
+        ArrayList<String> festivalNames = getFestivalNames(festivals);
+
+        ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, festivalNames);
 
         ListView listView = (ListView) findViewById(R.id.festival_listview);
         listView.setAdapter(adapter);
@@ -49,8 +54,28 @@ public class ListFestivals extends AppCompatActivity {
     /*
     Gets data from a http get request
      */
-    private void getData() {
+    /*private void getData() {
         festivalService = retrofit.create(FestivalService.class);
         festivals = festivalService.getFestivals();
+    }*/
+
+    private void populateFestivalList(){
+        Festival f1 = new Festival();
+        f1.name = "Roskilde Festival";
+        festivals.add(f1);
+        Festival f2 = new Festival();
+        f2.name = "Tinderbox";
+        festivals.add(f2);
+        Festival f3 = new Festival();
+        f3.name = "Smuk Festival";
+        festivals.add(f3);
+    }
+
+    private ArrayList<String> getFestivalNames(List<Festival> festivals){
+        ArrayList<String> festivalNames = new ArrayList<>();
+        for (Festival f : festivals){
+            festivalNames.add(f.name);
+        }
+        return festivalNames;
     }
 }

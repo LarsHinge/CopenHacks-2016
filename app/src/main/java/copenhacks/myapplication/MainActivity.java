@@ -109,20 +109,35 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override
             public void onClick(View v) {
-                //Intent myIntent = new Intent(MainActivity.this, ListFestivals.class);
-                //startActivity(myIntent);
-                //System.out.println(MusicTaste);
-                CharSequence text = "Hello toast!";
-                int duration = Toast.LENGTH_SHORT;
-                Context context = getApplicationContext();
-                StringBuilder builder = new StringBuilder();
+                Boolean hasTaste = false;
 
-                for(Boolean value : MusicTaste){
-                    builder.append(value.toString() + ", ");
+                for (Boolean isChosen : MusicTaste){
+                    if (isChosen)
+                        hasTaste = true;
                 }
 
-                Toast toast = Toast.makeText(context, builder.toString(), duration);
-                toast.show();
+                if (hasTaste){
+
+                    Intent myIntent = new Intent(MainActivity.this, ListFestivals.class);
+                    startActivity(myIntent);
+                }
+                else
+                {
+                    Intent myIntent = new Intent(MainActivity.this, GetATaste.class);
+                    startActivity(myIntent);
+                }
+
+
+                //int duration = Toast.LENGTH_SHORT;
+                //Context context = getApplicationContext();
+                //StringBuilder builder = new StringBuilder();
+
+                //for(Boolean value : MusicTaste){
+                //    builder.append(value.toString() + ", ");
+                //}
+
+                //Toast toast = Toast.makeText(context, builder.toString(), duration);
+                //toast.show();
             }
         });
 
